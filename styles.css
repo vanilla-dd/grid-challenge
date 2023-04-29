@@ -1,0 +1,131 @@
+@font-face {
+  font-family: Karla;
+  src: url(https://fonts.google.com/specimen/Karla);
+}
+:root {
+  --clr-grey-600: hsl(201, 6%, 94%);
+  --clr-grey-400: hsla(217, 21%, 67%, 1);
+  --clr-white-800: hsl(204, 43%, 93%);
+  --clr-white-400: hsla(0, 0%, 100%, 0.8);
+  --clr-cyan-400: hsl(179, 57%, 57%);
+  --clr-cyan-800: hsl(178, 63%, 64%);
+  --clr-bright-yellow-600: hsl(71, 84%, 53%);
+  --clr-bright-yellow-800: hsl(71, 78%, 48%);
+}
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+}
+.wrapper {
+  display: grid;
+  grid-template-rows: auto;
+}
+body {
+  background-color: var(--clr-grey-600);
+  padding: 3rem 2rem;
+  margin: 0;
+  font-family: "Karla", sans-serif;
+}
+.g1,
+.g2,
+.g3 {
+  padding: 0.5rem 1.25rem;
+}
+.g1--head,
+.g2--head,
+.g3--head {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.g1 {
+  background-color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.g1--head {
+  color: var(--clr-cyan-800);
+}
+.g1--sec {
+  color: var(--clr-bright-yellow-800);
+  font-weight: 600;
+  font-size: large;
+}
+.g1--main {
+  line-height: 1.5rem;
+  color: var(--clr-grey-400);
+}
+.g2 {
+  background-color: var(--clr-cyan-400);
+}
+.g2--head {
+  color: var(--clr-white-400);
+}
+.g2--pricing {
+  font-weight: bold;
+
+  color: white;
+
+  font-size: 2em;
+  margin: 0;
+}
+.g2--pricing::after {
+  content: "per month";
+  margin: 0.25rem;
+  right: 4rem;
+  font-size: small;
+}
+.g2--main {
+  color: rgb(249, 246, 246);
+}
+.g2--btn {
+  text-decoration: none;
+  display: block;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  color: white;
+  box-shadow: 0px 0px 10px hsl(0, 0%, 0%, 0.25);
+  text-align: center;
+  background-color: var(--clr-bright-yellow-600);
+}
+.g3 {
+  background-color: var(--clr-cyan-800);
+  border-radius: 0 0 0.5rem 0.5rem;
+  color: white;
+}
+.g3 > p:nth-child(n + 2) {
+  margin: 0.25rem;
+
+  color: rgb(240, 236, 236);
+}
+
+@media (width > 600px) {
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper {
+    grid-template-areas:
+      "first first "
+      "second third";
+  }
+  .g1,
+  .g2,
+  .g3 {
+    padding: 1rem 1.75rem;
+  }
+  .g1 {
+    grid-area: first;
+  }
+  .g2 {
+    grid-area: second;
+    border-radius: 0 0 0 0.5rem;
+  }
+  .g3 {
+    grid-area: third;
+    border-radius: 0 0 0.5rem 0;
+  }
+  .g2--btn {
+  }
+}
